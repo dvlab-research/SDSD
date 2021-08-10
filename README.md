@@ -20,11 +20,11 @@ Besides the dataset, we also propose an end-to-end framework, in which we design
 The SDSD dataset is collected as dynamic video pairs containing low-light and normal-light videos. This dataset is consists of two parts, i.e., the indoor subset and the outdoor subset.
 There are 70 video pairs in the indoor subset, and there are 80 video pairs in the outdoor subset.
 
-All data is hosted on [baidu pan](https://pan.baidu.com/s/1CSNP_mAJQy1ZcHf5kXSrFQ) (验证码: zcrb):
-indoor_np: the data in the indoor subset utilized for training, all video frames are saved as .npy file and the resolution is 512 x 960 for fast training.
-outdoor_np: the data in the outdoor subset utilized for training, all video frames are saved as .npy file and the resolution is 512 x 960 for fast training.
-indoor_png: the original video data in the indoor subset. All frames are saved as .png file and the resolution is 1080 x 1920.
-outdoor_png: the original video data in the outdoor subset. All frames are saved as .png file and the resolution is 1080 x 1920.
+All data is hosted on [baidu pan](https://pan.baidu.com/s/1CSNP_mAJQy1ZcHf5kXSrFQ) (验证码: zcrb):  
+indoor_np: the data in the indoor subset utilized for training, all video frames are saved as .npy file and the resolution is 512 x 960 for fast training.  
+outdoor_np: the data in the outdoor subset utilized for training, all video frames are saved as .npy file and the resolution is 512 x 960 for fast training.  
+indoor_png: the original video data in the indoor subset. All frames are saved as .png file and the resolution is 1080 x 1920.  
+outdoor_png: the original video data in the outdoor subset. All frames are saved as .png file and the resolution is 1080 x 1920.  
 
 The evaluation setting could follow the following descriptions:
 1) randomly select 12 scenes from indoor subset and take others as the training data. The performance on indoor scene is computed on the first 30 frames in each of this 12 scenes, i.e., 360 frames.
@@ -32,16 +32,16 @@ The evaluation setting could follow the following descriptions:
 (the split of training and testing is pointed out by "testing_dir" in the corresponding config file)
 
 
-The arrangement of the dataset is
--indoor/outdoor
- -GT # the videos under normal light
-  -pair1
-  -pair2
-  ...
- -LQ # the videos under low light
-  -pair1
-  -pair2
-  ...
+The arrangement of the dataset is  
+-indoor/outdoor  
+ -GT # the videos under normal light  
+  -pair1  
+  -pair2  
+  ...  
+ -LQ # the videos under low light  
+  -pair1  
+  -pair2  
+  ...  
 
 
 After download the dataset, place them in './dataset' (you can also place the dataset in other place, once you modify "path_to_dataset" in the corresponding config file).
@@ -52,16 +52,16 @@ After download the dataset, place them in './dataset' (you can also place the da
 Different from the original setting of SMID, our work aims to enhance sRGB videos rather than RAW videos. Thus, we first transfer the RAW data to sRGB data with rawpy.
 You can download the processed dataset for experiments using the following link: [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux):
 
-The arrangement of the dataset is
--smid
- -SMID_Long_np # the frame under normal light
-  -0001
-  -0002
-  ...
- -SMID_LQ_np # the frame under low light
-  -0001
-  -0002
-  ...
+The arrangement of the dataset is  
+-smid  
+ -SMID_Long_np # the frame under normal light  
+  -0001  
+  -0002  
+  ...  
+ -SMID_LQ_np # the frame under low light  
+  -0001  
+  -0002  
+  ...  
 
 After download the dataset, place them in './dataset'. The arrangement of the dataset is the same as that of SDSD.
 You can also place the dataset in other place, once you modify "path_to_dataset" in the corresponding config file.
@@ -114,19 +114,19 @@ python -m torch.distributed.launch --nproc_per_node 1 --master_port 4322 train.p
 
 We use PSNR and SSIM as the metrics for evaluation.
 
-For the evaluation on indoor subset of SDSD, you should write the location of checkpoint in ``pretrain_model_G" of options/test/test_in_sdsd.yml
+For the evaluation on indoor subset of SDSD, you should write the location of checkpoint in "pretrain_model_G" of options/test/test_in_sdsd.yml
 use the following command line:
 ```
 python quantitative_test.py -opt options/test/test_in_sdsd.yml
 ```
 
-For the evaluation on outdoor subset of SDSD, you should write the location of checkpoint in ``pretrain_model_G" of options/test/test_out_sdsd.yml
+For the evaluation on outdoor subset of SDSD, you should write the location of checkpoint in "pretrain_model_G" of options/test/test_out_sdsd.yml
 use the following command line:
 ```
 python quantitative_test.py -opt options/test/test_out_sdsd.yml
 ```
 
-For the evaluation on SMID, you should write the location of checkpoint in ``pretrain_model_G" of options/test/test_smid.yml
+For the evaluation on SMID, you should write the location of checkpoint in "pretrain_model_G" of options/test/test_smid.yml
 use the following command line:
 ```
 python quantitative_test.py -opt options/test/test_smid.yml
@@ -136,13 +136,13 @@ python quantitative_test.py -opt options/test/test_smid.yml
 
 You can download our trained model using the following links: https://drive.google.com/file/d/1_V0Dxtr4dZ5xZuOsU1gUIUYUDKJvj7BZ/view?usp=sharing
 
-the model trained with indoor subset in SDSD: indoor_G.pth
-the model trained with outdoor subset in SDSD: outdoor_G.pth
-the model trained with SMID: smid_G.pth
+the model trained with indoor subset in SDSD: indoor_G.pth  
+the model trained with outdoor subset in SDSD: outdoor_G.pth  
+the model trained with SMID: smid_G.pth  
 
 ### Qualitative Test
 
-We provide the script to visualize the enhanced frames
+We provide the script to visualize the enhanced frames.
 Please download the pretrained models or use your trained models, and then use the following command line
 ```
 python qualitative_test.py -opt options/test/test_in_sdsd.yml
