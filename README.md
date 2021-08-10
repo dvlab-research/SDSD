@@ -55,7 +55,7 @@ You can download the processed dataset for experiments using the following link:
 The arrangement of the dataset is  
 -smid  
 --SMID_Long_np (the frame under normal light)  
------0001  
+----0001  
 ----0002  
 ----...  
 --SMID_LQ_np (the frame under low light)  
