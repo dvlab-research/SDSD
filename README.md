@@ -35,15 +35,15 @@ The evaluation setting could follow the following descriptions:
 
 
 The arrangement of the dataset is  
--indoor/outdoor  
---GT (the videos under normal light)  
-----pair1  
-----pair2  
-----...  
---LQ (the videos under low light)  
-----pair1  
-----pair2  
-----...  
+--indoor/outdoor  
+----GT (the videos under normal light)  
+--------pair1  
+--------pair2  
+--------...  
+----LQ (the videos under low light)  
+--------pair1  
+--------pair2  
+--------...  
 
 
 After download the dataset, place them in './dataset' (you can also place the dataset in other place, once you modify "path_to_dataset" in the corresponding config file).
@@ -55,15 +55,15 @@ Different from the original setting of SMID, our work aims to enhance sRGB video
 You can download the processed dataset for experiments using the following link: [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux):
 
 The arrangement of the dataset is  
--smid  
---SMID_Long_np (the frame under normal light)  
-----0001  
-----0002  
-----...  
---SMID_LQ_np (the frame under low light)  
-----0001  
-----0002  
-----...  
+--smid  
+----SMID_Long_np (the frame under normal light)  
+--------0001  
+--------0002  
+--------...  
+----SMID_LQ_np (the frame under low light)  
+--------0001  
+--------0002  
+--------...  
 
 After download the dataset, place them in './dataset'. The arrangement of the dataset is the same as that of SDSD.
 You can also place the dataset in other place, once you modify "path_to_dataset" in the corresponding config file.
