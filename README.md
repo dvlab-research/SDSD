@@ -58,7 +58,7 @@ The arrangement of the dataset is
 -----0001  
 ----0002  
 ----...  
----SMID_LQ_np (the frame under low light)  
+--SMID_LQ_np (the frame under low light)  
 ----0001  
 ----0002  
 ----...  
@@ -90,9 +90,8 @@ python setup.py develop
 python setup.py install
 ```
 
-## Usage
 
-### Train
+## Train
 
 The training on indoor subset of SDSD:
 ```
@@ -110,7 +109,7 @@ The training on SMID:
 python -m torch.distributed.launch --nproc_per_node 1 --master_port 4322 train.py -opt options/train/train_smid.yml --launcher pytorch
 ```
 
-### Quantitative Test
+## Quantitative Test
 
 We use PSNR and SSIM as the metrics for evaluation.
 
@@ -132,7 +131,7 @@ use the following command line:
 python quantitative_test.py -opt options/test/test_smid.yml
 ```
 
-### Pre-trained Model
+## Pre-trained Model
 
 You can download our trained model using the following links: https://drive.google.com/file/d/1_V0Dxtr4dZ5xZuOsU1gUIUYUDKJvj7BZ/view?usp=sharing
 
@@ -140,7 +139,7 @@ the model trained with indoor subset in SDSD: indoor_G.pth
 the model trained with outdoor subset in SDSD: outdoor_G.pth  
 the model trained with SMID: smid_G.pth  
 
-### Qualitative Test
+## Qualitative Test
 
 We provide the script to visualize the enhanced frames.
 Please download the pretrained models or use your trained models, and then use the following command line
