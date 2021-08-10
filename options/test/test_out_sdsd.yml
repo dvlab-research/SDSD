@@ -1,0 +1,36 @@
+name: outdoor-sdsd-results
+suffix: ~
+model: video_base
+distortion: sr
+scale: 1
+crop_border: ~
+gpu_ids: [0]
+
+datasets:
+  test:
+    name: REDS4
+    mode: video_samesize1
+    dataroot_GT: path_to_dataset/outdoor_np/GT
+    dataroot_LQ: path_to_dataset/outdoor_np/input
+    train_size: [960, 512]
+    cache_data: true
+    N_frames: 5
+    padding: new_info
+    testing_dir: pair1,pair5,pair14,pair36,pair46,pair48,pair49,pair60,pair62,pair63,pair66,pair75,pair76
+
+#### network structures
+network_G:
+  which_model_G: denoise_illumination_enhance
+  nf: 64
+  nframes: 5
+  groups: 8
+  front_RBs: 5
+  back_RBs: 10
+  predeblur: true
+  HR_in: true
+  w_TSA: true
+
+#### path
+path:
+  root: ./
+  pretrain_model_G: pretrain/outdoor_G.pth

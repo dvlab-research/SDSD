@@ -1,0 +1,36 @@
+name: indoor-sdsd-results
+suffix: ~
+model: video_base
+distortion: sr
+scale: 1
+crop_border: ~
+gpu_ids: [0]
+
+datasets:
+  test:
+    name: test
+    mode: video_samesize1
+    dataroot_GT: path_to_dataset/indoor_np/GT
+    dataroot_LQ: path_to_dataset/indoor_np/input
+    train_size: [960, 512]
+    cache_data: true
+    N_frames: 5
+    padding: new_info
+    testing_dir: pair13,pair15,pair21,pair23,pair31,pair33,pair50,pair52,pair58,pair60,pair68,pair70
+
+#### network structures
+network_G:
+  which_model_G: denoise_illumination_enhance
+  nf: 64
+  nframes: 5
+  groups: 8
+  front_RBs: 5
+  back_RBs: 10
+  predeblur: true
+  HR_in: true
+  w_TSA: true
+
+#### path
+path:
+  root: ./
+  pretrain_model_G: pretrain/indoor_G.pth
