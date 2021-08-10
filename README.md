@@ -11,7 +11,9 @@ Besides the dataset, we also propose an end-to-end framework, in which we design
 
 <img src="./figure/collection.png" width="900"/>
 
+<p align="center">
 <img src="./figure/sample.png" width="450"/>
+</p>
 
 [paper link](https://jiaya.me/publication/)
 
