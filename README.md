@@ -22,7 +22,7 @@ Besides the dataset, we also propose an end-to-end framework, in which we design
 The SDSD dataset is collected as dynamic video pairs containing low-light and normal-light videos. This dataset is consists of two parts, i.e., the indoor subset and the outdoor subset.
 There are 70 video pairs in the indoor subset, and there are 80 video pairs in the outdoor subset.
 
-All data is hosted on [baidu pan](https://pan.baidu.com/s/1CSNP_mAJQy1ZcHf5kXSrFQ) (验证码: zcrb):  
+All data is hosted on [baidu pan](https://pan.baidu.com/s/1CSNP_mAJQy1ZcHf5kXSrFQ) (验证码: zcrb) and [google pan](https://drive.google.com/drive/folders/1-fQGjzNcyVcBjo_3Us0yM5jDu0CKXXrV?usp=sharing) : 
 indoor_np: the data in the indoor subset utilized for training, all video frames are saved as .npy file and the resolution is 512 x 960 for fast training.  
 outdoor_np: the data in the outdoor subset utilized for training, all video frames are saved as .npy file and the resolution is 512 x 960 for fast training.  
 indoor_png: the original video data in the indoor subset. All frames are saved as .png file and the resolution is 1080 x 1920.  
@@ -52,7 +52,7 @@ After download the dataset, place them in './dataset' (you can also place the da
 ## The smid dataset for training
 
 Different from the original setting of SMID, our work aims to enhance sRGB videos rather than RAW videos. Thus, we first transfer the RAW data to sRGB data with rawpy.
-You can download the processed dataset for experiments using the following link: [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux):
+You can download the processed dataset for experiments using the following link: [baidu pan](https://pan.baidu.com/s/1Qol_4GsIjGDR8UT9IRZbBQ) (验证码: btux) and [google pan](https://drive.google.com/drive/folders/1OV4XgVhipsRqjbp8SYr-4Rpk3mPwvdvG?usp=sharing):
 
 The arrangement of the dataset is  
 --smid  
